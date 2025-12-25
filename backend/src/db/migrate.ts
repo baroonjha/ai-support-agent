@@ -7,6 +7,10 @@ dotenv.config();
 
 const bootstrapPool = new Pool({
     connectionString: process.env.DATABASE_URL,
+    ssl: process.env.SSL === "true" 
+    ? { rejectUnauthorized: false } 
+    : false,
+
 });
 
 const runBootstrapMigration = async () => {
@@ -27,7 +31,10 @@ const runBootstrapMigration = async () => {
         }
 
         const appPool = new Pool({
-            connectionString: process.env.DATABASE_URL || `postgresql://postgres:password@localhost:5432/${dbName}`,
+            connectionString: process.env.DATABASE_URL,
+            ssl: process.env.SSL === "true" 
+    ? { rejectUnauthorized: false } 
+    : false,
         });
 
         const schemaPath = path.join(__dirname, "schema.sql");
