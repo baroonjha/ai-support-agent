@@ -12,7 +12,7 @@ A production-ready, full-stack AI support agent capable of holding context-aware
 
 ### 1. Clone & Install
 ```bash
-git clone <repo-url>
+git clone https://github.com/baroonjha/ai-support-agent.git
 cd ai-support-agent
 ```
 
@@ -26,6 +26,8 @@ npm install
 PORT=3000
 DATABASE_URL=postgresql://user:password@localhost:5432/ai_support_agent
 OPENAI_API_KEY=sk-your-key-here
+# Make SSL = false when you are using locally running postgres and make SSL = true  when you are using the managed postgres like neon.
+SSL=false
 ```
 
 ### 3. Database Migration
@@ -41,6 +43,10 @@ npx ts-node src/db/migrate.ts
 npx ts-node src/server.ts
 ```
 **Frontend:**
+***Create .env file***
+```bash
+ VITE_API_URL=http://localhost:3000 || backend_hosted_url
+```
 ```bash
 # Open a new terminal
 cd frontend
