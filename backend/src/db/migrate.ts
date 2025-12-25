@@ -6,7 +6,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const bootstrapPool = new Pool({
-    connectionString: process.env.DATABASE_URL",
+    connectionString: process.env.DATABASE_URL,
 });
 
 const runBootstrapMigration = async () => {
