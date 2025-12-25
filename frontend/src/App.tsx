@@ -3,6 +3,7 @@ import type { Message } from './types';
 import { MessageList } from './components/MessageList';
 import { MessageInput } from './components/MessageInput';
 import './index.css';
+const API_URL = import.meta.env.VITE_API_URL;
 function App() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
@@ -27,7 +28,7 @@ function App() {
 
   const loadHistory = async (sessionId: string) => {
     try {
-      const response = await fetch(`http://localhost:3000/chat/history/${sessionId}`);
+      const response = await fetch(`${API_URL}/chat/history/${sessionId}`);
       const data = await response.json();
       const cleanMessages = data.map((msg: any) => ({
         id: msg.id.toString(),
@@ -53,7 +54,7 @@ function App() {
     setIsTyping(true);
     try {
 
-      const response = await fetch('http://localhost:3000/chat/message', {
+      const response = await fetch(`${API_URL}/chat/message`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
