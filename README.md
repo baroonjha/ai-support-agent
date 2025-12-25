@@ -1,7 +1,10 @@
 # 🤖 AI Customer Support Agent
 
 A production-ready, full-stack AI support agent capable of holding context-aware conversations and answering domain-specific queries using OpenAI's GPT-4o-mini.
----
+
+##Note
+I have deployed backend on render and render shuts downthe services if there is no traffic.
+So please wait for a moment when you enter the first query ,render restart the service so there will be a delay in the 1st query .
 
 ## 🚀 Quick Start (Run Locally)
 
