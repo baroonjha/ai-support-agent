@@ -6,7 +6,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const bootstrapPool = new Pool({
-    connectionString: process.env.BOOTSTRAP_DATABASE_URL || "postgresql://postgres:baroon@localhost:5432/postgres",
+    connectionString: process.env.DATABASE_URL",
 });
 
 const runBootstrapMigration = async () => {
