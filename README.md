@@ -75,7 +75,7 @@ The system is a Monorepo structured into two main packages:
     *   **Robustness**: Input validation (length caps, empty checks) & Graceful Error Handling.
 
 ### 2. Frontend (`/frontend`)
-*   **Tech**: React, Vite, TypeScript, CSS.
+*   **Tech**: React, Vite, TypeScript, Tailwind css.
 *   **Key Design**:
     *   **Persistence**: Saves `sessionId` to `localStorage` to restore chat on reload.
     *   **Optimistic UI**: Immediate feedback for user actions.
